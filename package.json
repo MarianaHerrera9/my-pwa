@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+      "test": "echo \"No hay tests especificados\" && exit 0"
+
   },
   "dependencies": {
     "eslint-config-prettier": "^10.1.8",
