@@ -1,13 +1,45 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mi PWA Ejemplo</title>
+
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0a74da" />
+
+    <link rel="icon" href="public/icons/logo192.png" />
+    <link rel="apple-touch-icon" href="public/icons/logo192.png" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="app" class="app-shell">
+    <header class="header">
+      <h1>Mi PWA Ejemplo</h1>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2>Home screen</h2>
+        <p>Esta es la vista inicial de la PWA (App Shell).</p>
+      </section>
+    </main>
+
+    <footer>
+      <small>© 2025 - Mariana</small>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('Service Worker registrado:', reg.scope))
+          .catch(err => console.error('Registro SW falló:', err));
+      });
+    }
+  </script>
   </body>
 </html>
