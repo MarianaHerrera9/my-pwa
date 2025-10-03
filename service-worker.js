@@ -2,12 +2,12 @@ const CACHE_NAME = 'pwa-app-shell-v1';
 const RUNTIME = 'pwa-runtime-v1';
 
 const PRECACHE_URLS = [
-  'index.html',
-  'css/styles.css',
-  'js/app.js',
-  'manifest.json',
-  'icons/icon-192.png',
-  'icons/icon-512.png'
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/css/styles.css',
+  '/icons/logo192.png',
+  '/icons/logo512.png'
 ];
 
 self.addEventListener('install', event => {
